@@ -1,0 +1,26 @@
+version: '3.6'
+services:
+  knapsack-python:
+    image: knapsack-python
+    build:
+      context: .
+      dockerfile: Dockerfile-python
+    environment:
+      - PYTHONPATH=/app
+    command: bash entrypoint-python.sh
+    volumes:
+      - .:/app
+    stdin_open: true
+    tty: true
+  knapsack-rust:
+    image: knapsack-rust
+    build:
+      context: .
+      dockerfile: Dockerfile-rust
+    environment:
+      - PYTHONPATH=/app
+    command: bash entrypoint-rust.sh
+    volumes:
+      - .:/app
+    stdin_open: true
+    tty: true
