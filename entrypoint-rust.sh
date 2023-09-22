@@ -1,3 +1,3 @@
 #!/bin/bash
-rustc knapsack.rs
+rustc -O knapsack.rs
 time ./knapsack
